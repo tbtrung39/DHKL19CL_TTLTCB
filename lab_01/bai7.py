@@ -1,0 +1,9 @@
+ax = float(input("Nhap toa do x cua A: "))
+ay = float(input('Nhap toa do y cua A: '))
+bx = float(input("Nhap toa do x cua B: "))
+by = float(input("Nhap toa do y cua B: "))
+cx = float(input("Nhap toa do x cua C: "))
+cy = float(input("Nhap toa do y cua C: "))
+gx = (ax + bx + cx) / 3
+gy = (ay + by + cy) / 3
+print("Trong tam cua tam giac = ", round(gx,2), round(gy,2))

@@ -1,0 +1,6 @@
+x = float(input("x: "))
+y = float(input("y: "))
+z = float(input("z: "))
+print("Doi xung qua Oxy: ", x, y, -z)
+print("Doi xung qua Oxz: ", x, -y, z)
+print("Doi xung qua Oyz: ", -x, y, z)
