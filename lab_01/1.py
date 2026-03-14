@@ -1,0 +1,11 @@
+msv = input("Nhập mã sinh viên: ")
+hoten = input("Nhập họ tên: ")
+que = input("Nhập quê quán: ")
+namsinh = input("Nhập năm sinh: ")
+dtb = float(input("Nhập điểm trung bình: "))
+
+print("Mã SV:", msv)
+print("Họ tên:", hoten)
+print("Quê quán:", que)
+print("Năm sinh:", namsinh)
+print("Điểm trung bình:", dtb)
