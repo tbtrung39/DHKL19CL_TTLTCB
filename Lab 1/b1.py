@@ -1,0 +1,8 @@
+ten = input("Nhập tên: ")
+que = input("Nhập quê: ")
+sn = int(input("Nhập năm sinh: "))
+dtb = float(input("Nhập điểm: "))
+print("Tên: ",ten)
+print("quê quán: ",que)
+print("Nhập năm sinh: ",sn)
+print("Nhập điểm trung bình: ",dtb)
