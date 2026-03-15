@@ -1,7 +1,7 @@
 U = 220
 I = 2.7
 don_gia = 7000
-
+#
 t_giay = float(input("Nhập thời gian sử dụng (giây): "))
 
 t_gio = t_giay / 3600

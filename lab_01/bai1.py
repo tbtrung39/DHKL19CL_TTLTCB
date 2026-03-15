@@ -3,7 +3,7 @@ ho_ten = input("Nhập họ tên: ")
 que_quan = input("Nhập quê quán: ")
 nam_sinh = int(input("Nhập năm sinh: "))
 diem_tb = float(input("Nhập điểm trung bình: "))
-
+#
 print("\n--- Thông tin sinh viên vừa nhập ---")
 print(f"MSSV: {ma_sv}")
 print(f"Họ tên: {ho_ten}")

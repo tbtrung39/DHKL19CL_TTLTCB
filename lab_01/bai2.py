@@ -1,5 +1,5 @@
 import math
-
+#
 d = int(input("Nhập số ngày: "))
 h = int(input("Nhập số giờ: "))
 m = int(input("Nhập số phút: "))

@@ -1,6 +1,6 @@
 a1 = float(input("Nhập hoành độ a1: "))
 a2 = float(input("Nhập tung độ a2: "))
-
+#
 b1 = float(input("Nhập hoành độ b1: "))
 b2 = float(input("Nhập tung độ b2: "))
 

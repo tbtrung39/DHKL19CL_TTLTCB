@@ -1,5 +1,5 @@
 import math
-
+#
 x = float(input("Nhập giá trị x: "))
 
 tu_so = -x + math.sqrt(x**2 + 4)

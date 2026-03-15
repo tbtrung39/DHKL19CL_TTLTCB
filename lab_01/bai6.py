@@ -3,7 +3,7 @@ import math
 a = float(input("Nhập a: "))
 b = float(input("Nhập b: "))
 c = float(input("Nhập c: "))
-
+#
 if a == 0:
     if b == 0:
         print("Phương trình vô nghiệm" if c != 0 else "Phương trình vô số nghiệm")
