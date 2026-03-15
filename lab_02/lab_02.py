@@ -1,109 +1,44 @@
-#2
 import math
 
-a = float(input("Nhập a: "))
-b = float(input("Nhập b: "))
-c = float(input("Nhập c: "))
+def giai_bac_2(a, b, c):
+    if a == 0:
+        return f"x = {-c/b}" if b != 0 else ("Vô số nghiệm" if c == 0 else "Vô nghiệm")
 
-if a == 0:
-    if b == 0:
-        if c == 0:
-            print("Phương trình vô số nghiệm")
-        else:
-            print("Phương trình vô nghiệm")
-    else:
-        x = -c / b
-        print("Phương trình bậc nhất, nghiệm x =", x)
+    delta = b**2 - 4*a*c
+    if delta < 0: return "Vô nghiệm"
 
-else:
-    delta = b*b - 4*a*c
-    
-    if delta < 0:
-        print("Phương trình vô nghiệm")
-        
-    elif delta == 0:
-        x = -b/(2*a)
-        print("Phương trình có nghiệm kép x =", round(x,2))
-        
-    else:
-        x1 = (-b + math.sqrt(delta))/(2*a)
-        x2 = (-b - math.sqrt(delta))/(2*a)
-        print("x1 =", round(x1,2))
-        print("x2 =", round(x2,2))
+    x1 = (-b + math.sqrt(delta)) / (2*a)
+    x2 = (-b - math.sqrt(delta)) / (2*a)
+    return f"x1 = {x1}, x2 = {x2}" if delta > 0 else f"Nghiệm kép x = {x1}"
 
-#4
-n = int(input("Nhập số nguyên: "))
+def lay_hang_tram(n):
+    return (abs(n) // 100) % 10
 
-n = abs(n)   # tránh số âm
+def doc_so(n):
+    u = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"]
+    tr, ch, dv = n // 100, (n // 10) % 10, n % 10
 
-hangtram = (n // 100) % 10
+    s = f"{u[tr]} trăm"
+    s += " lẻ" if ch == 0 and dv != 0 else f" {u[ch]} mươi" if ch > 1 else " mười" if ch == 1 else ""
 
-print("Chữ số hàng trăm là:", hangtram)
+    if dv > 0:
+        chu_dv = "mốt" if dv == 1 and ch > 1 else "lăm" if dv == 5 and ch > 0 else u[dv]
+        s += f" {chu_dv}"
+    return s.strip().capitalize()
 
-#6
-n = int(input("Nhập số có 3 chữ số: "))
+def tinh_luong(tnct):
+    he_so = 2.34 if tnct < 12 else 3.33 if tnct < 36 else 3.66 if tnct < 60 else 3.99
+    return he_so * 1350000
 
-tram = n // 100
-chuc = (n // 10) % 10
-donvi = n % 10
+def tinh_tien_san(bd, kt):
+    h = kt - bd
+    gia_goc = min(h, 3) * 100000 + max(0, h - 3) * 75000
+    giam_gia = 0.9 if (bd >= 11 and kt <= 15) else 1.0
+    return gia_goc * giam_gia
 
-so = ["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín"]
-
-print(so[tram], "trăm", so[chuc], "mươi", so[donvi])
-
-#8
-luong_cb = 1350000
-
-tnct = int(input("Nhập thâm niên công tác (tháng): "))
-
-if tnct < 12:
-    heso = 2.34
-elif tnct < 36:
-    heso = 3.33
-elif tnct < 60:
-    heso = 3.66
-else:
-    heso = 3.99
-
-luong = heso * luong_cb
-
-print("Lương nhân viên =", luong)
-
-#10
-gio = int(input("Nhập số giờ thuê sân: "))
-
-gia_3gio_dau = 100000
-gia_sau = gia_3gio_dau * 0.75
-
-if gio <= 3:
-    tien = gio * gia_3gio_dau
-else:
-    tien = 3 * gia_3gio_dau + (gio - 3) * gia_sau
-
-# giảm giá khung giờ 11-15
-if 11 <= gio <= 15:
-    tien = tien * 0.9
-
-print("Tiền thuê sân =", tien)
-
-#12
-# nhập ngày tháng năm
-ngay = int(input("Nhập ngày: "))
-thang = int(input("Nhập tháng: "))
-nam = int(input("Nhập năm: "))
-
-# số ngày của từng tháng (năm không nhuận)
-songay = [31,28,31,30,31,30,31,31,30,31,30,31]
-
-# kiểm tra ngày hợp lệ
-if ngay < songay[thang-1]:
-    ngay += 1
-else:
-    ngay = 1
-    if thang < 12:
-        thang += 1
-    else:
-        thang = 1
-        nam += 1
-
-print("Ngày tiếp theo là:", ngay, "/", thang, "/", nam)
+if __name__ == "__main__":
+    print(f"Bài 2: {giai_bac_2(1, -3, 2)}")
+    print(f"Bài 4: {lay_hang_tram(1234)}")
+    print(f"Bài 6: {doc_so(515)}")
+    print(f"Bài 8: {tinh_luong(40):,.0f} VNĐ")
+    print(f"Bài 10: {tinh_tien_san(11, 14):,.0f} VNĐ")
