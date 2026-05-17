@@ -1,0 +1,5 @@
+m = input("Nhập số tự nhiên m: ")
+n = input("Nhập số tự nhiên n: ")
+Chung = set(m).intersection(set(n))
+Tong = sum(int(x) for x in Chung)
+print("Tổng các chữ số chung của m và n:", Tong)

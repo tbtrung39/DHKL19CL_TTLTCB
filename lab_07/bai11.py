@@ -1,0 +1,13 @@
+n = int(input("Nhập số lượng sinh viên: "))
+a = int(input("Nhập số sinh viên thi C++: "))
+b = int(input("Nhập số sinh viên thi Java: "))
+c = int(input("Nhập số sinh viên thi Python: "))
+C = set(input("Nhập số hiệu sinh viên thi C++ (cách nhau bằng dấu cách): ").split())
+Java = set(input("Nhập số hiệu sinh viên thi Java (cách nhau bằng dấu cách): ").split())
+Python = set(input("Nhập số hiệu sinh viên thi Python (cách nhau bằng dấu cách): ").split())
+ThiMotNgonNgu = (C - Java - Python) | (Java - C - Python) | (Python - C - Java)
+ThiHaiNgonNgu = (C & Java - Python) | (C & Python - Java) | (Java & Python - C)
+ThiBaNgonNgu = C & Java & Python
+print("Sinh viên chỉ thi 1 ngôn ngữ lập trình:", ThiMotNgonNgu)
+print("Sinh viên thi 2 ngôn ngữ lập trình:", ThiHaiNgonNgu)
+print("Sinh viên thi cả 3 ngôn ngữ lập trình:", ThiBaNgonNgu)   
