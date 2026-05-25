@@ -1,0 +1,10 @@
+import sohoc
+a = input("Nhap canh a: ")
+a = int(a)
+b = input("Nhap canh b: ")
+b = int(b)
+n = input("Nhap canh c: ")
+n = int(n)
+sohoc.ucln(a,b)
+sohoc.bcnn(a,b) 
+sohoc.sumdivision(n)
