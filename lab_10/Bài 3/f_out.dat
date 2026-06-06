@@ -1,0 +1,19 @@
+# Bài 3:
+def sap_xep_va_ghi_file():
+    try:
+        with open("f_in.dat", "r") as f:
+            ds_so = [int(x) for x in f.read().split()]
+        
+        ds_so.sort()
+        
+        with open("f_out.dat", "w") as f_out:
+            f_out.write(" ".join(map(str, ds_so)))
+            
+        print("Đã sắp xếp thành công! Nội dung trong f_out.dat là:")
+        # In thử kết quả ra màn hình để kiểm tra
+        print(" ".join(map(str, ds_so)))
+        
+    except FileNotFoundError:
+        print("Không tìm thấy file f_in.dat, bạn hãy tạo file trước nhé!")
+
+sap_xep_va_ghi_file()
